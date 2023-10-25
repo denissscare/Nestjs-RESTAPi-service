@@ -4,13 +4,10 @@ import { UsersService } from "./users.service";
 import { ApiOperation, ApiResponse, ApiTags } from "@nestjs/swagger";
 import { User } from "./user.model";
 
-
 @ApiTags("Users API")
 @Controller("users")
 export class UsersController {
-
-  constructor(private userService: UsersService) {
-  }
+  constructor(private userService: UsersService) {}
 
   @ApiOperation({ summary: "Create user" })
   @ApiResponse({ status: 200, type: User })
@@ -25,5 +22,4 @@ export class UsersController {
   getAll() {
     return this.userService.getAllUsers();
   }
-
 }

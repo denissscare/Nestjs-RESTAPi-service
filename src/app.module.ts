@@ -9,7 +9,7 @@ import { User } from "./users/user.model";
   providers: [],
   imports: [
     ConfigModule.forRoot({
-      envFilePath: ".env"
+      envFilePath: ".env",
     }),
     SequelizeModule.forRoot({
       dialect: "postgres",
@@ -19,10 +19,9 @@ import { User } from "./users/user.model";
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
       models: [User],
-      autoLoadModels: true
+      autoLoadModels: true,
     }),
-    UsersModule
-  ]
+    UsersModule,
+  ],
 })
-export class AppModule {
-}
+export class AppModule {}

@@ -13,7 +13,7 @@ export class User extends Model<User, UserCreationAtrs> {
     type: DataType.INTEGER,
     unique: true,
     autoIncrement: true,
-    primaryKey: true
+    primaryKey: true,
   })
   id: number;
 
@@ -21,28 +21,28 @@ export class User extends Model<User, UserCreationAtrs> {
   @Column({
     type: DataType.STRING,
     unique: true,
-    allowNull: false
+    allowNull: false,
   })
   email: string;
 
   @ApiProperty({ example: "verySecret", description: "Password" })
   @Column({
     type: DataType.STRING,
-    allowNull: false
+    allowNull: false,
   })
   password: string;
 
   @ApiProperty({ example: false, description: "Ban status" })
   @Column({
     type: DataType.BOOLEAN,
-    defaultValue: false
+    defaultValue: false,
   })
   isBan: boolean;
 
   @ApiProperty({ example: "Bad user", description: "Ban reason" })
   @Column({
     type: DataType.STRING,
-    allowNull: true
+    allowNull: true,
   })
   banReason: string;
 }
