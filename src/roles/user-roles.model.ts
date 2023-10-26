@@ -4,13 +4,12 @@ import {
   DataType,
   Table,
   Model,
-  BelongsToMany,
   ForeignKey,
 } from "sequelize-typescript";
 import { User } from "../users/users.model";
 import { Roles } from "./roles.model";
 
-@Table({ tableName: "user-roles", createdAt: false, updatedAt: false})
+@Table({ tableName: "user_roles", createdAt: false, updatedAt: false})
 export class UserRoles extends Model<UserRoles> {
   @Column({
     type: DataType.INTEGER,
